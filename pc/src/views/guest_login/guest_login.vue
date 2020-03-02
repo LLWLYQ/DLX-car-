@@ -1,0 +1,60 @@
+<template>
+  <div class="guest-add-box">
+    <level-title title="个人报名" subTitle="registrants" :navTitle="navTitle" />
+    <div class="guest-add-list flexBox">
+      <level-left :currentIndex="currentIndex" :mettingNav="guestNav"></level-left>
+      <div class="guest-add">
+        <guest-add @submit="submit" />
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import axios from 'axios'
+import HttpRequest, { baseURL, Headers } from '@/utils/utils'
+import LevelTitle from '@/base/level/level'
+import LevelLeft from '@/base/level-left/level-left'
+import GuestAdd from '@/base/guest-add/guest-add'
+
+export default {
+  data() {
+    return {
+      navTitle: '个人报名',
+      currentIndex: 0,
+      guestNav: [
+        {name: '个人报名'}
+      ]
+    }
+  },
+  methods: {
+    submit(form) {
+      const formData = new FormData()
+      formData.append('username', form.username)
+      formData.append('phone', form.phone)
+      formData.append('picId', form.picId)
+      axios.post(`${baseURL}/auto_2020.php?act=viewer`, formData, Headers).then((res) => {
+        if (res.data.code === 1) {
+          alert(res.data.msg)
+        }
+        if (res.data.code === 2) {
+          alert(res.data.msg)
+        }
+      })
+    }
+  },
+  components: {
+    GuestAdd,
+    LevelLeft,
+    LevelTitle
+  }
+}
+</script>
+
+<style lang="stylus">
+  .guest-add-list
+    margin-top 60px
+    .guest-add
+      flex 1
+      margin-left 50px
+</style>

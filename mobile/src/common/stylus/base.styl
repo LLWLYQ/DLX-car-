@@ -1,0 +1,156 @@
+
+/* uft-8 */
+html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+::-webkit-scrollbar{width:0;height:0}
+body, html{
+    font: 14px/1.5 "Microsoft YaHei", Arial
+    transition: all .3s linear
+    overflow: auto
+}
+fieldset,img {
+    border: 0
+}
+img {
+    display: block
+}
+address,caption,cite,code,dfn,th,var {
+    font-style: normal;
+    font-weight: normal
+}
+ul,ol {
+    list-style: none
+}
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0
+}
+select,input {
+    vertical-align: middle
+}
+select,input,textarea {
+    font-size: 12px;
+    margin: 0
+}
+input[type="text"],input[type="password"],textarea {
+    outline-style: none;
+    -webkit-appearance: none
+}
+textarea {
+    resize: none
+}
+button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+  -webkit-user-modify: read-write-plaintext-only
+}
+table {
+    border-collapse: collapse
+}
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+
+.clear{
+    clear: both;
+}
+.clear::after{
+    content: "";
+    display: table;
+}
+
+.baswW-750 {
+  max-width: 750px;
+  margin: auto;
+}
+
+.MgT20 {
+  margin-top: 20px;
+}
+.MgT50 {
+  margin-top: 50px;
+}
+.MgT30 {
+  margin-top: 30px;
+}
+.Mg15 {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+// flex布局
+.flexBox {
+  display: flex
+  align-items: center
+  justify-content: flex-start
+}
+.flexBox.between {
+  justify-content space-between
+}
+.flexBox.center {
+  justify-content center
+}
+
+// 公共头
+.baseW-tit
+  width 100%
+  height 35px
+  padding: 0 15px
+  background url('http://lib.albers.top/activity/car/tit_bg.png') left center no-repeat
+  box-sizing: border-box
+  border-right 1px solid #dedede
+  h1
+    font-size: .875rem /* 14/16 */
+    font-weight: normal
+    color: #0ba2db
+  span
+    font-size: .75rem /* 12/16 */
+    color: #8c8c8c
+    margin: 0 15px
+  p
+    font-size: .75rem /* 12/16 */
+    color: #8c8c8c
+  a.more
+    font-size: .75rem /* 12/16 */
+    flex: 1
+    color: #0ba2db
+    text-align: right
+
+.fade-enter-active, .slideTop-leave-active
+  transition: all .5s
+.fade-enter, .slideTop-leave-to
+  opacity 0
+
+.loginMain {
+  position: absolute
+  top 20px
+  margin auto 15px
+  max-height: 600px
+  background: #fff
+  border-radius: 10px
+  .title {
+    height 55px
+    line-height 55px
+    padding: 0 15px
+    border-bottom: 1px solid #ccc
+    h1 {
+      font-size: 1.125rem
+      color: #0ba2db
+    }
+    span {
+      display: block
+      width: 15px
+      height: 15px
+      background url('http://lib.albers.top/images/icon/close.png') center center no-repeat
+      background-size cover
+    }
+  }
+}
