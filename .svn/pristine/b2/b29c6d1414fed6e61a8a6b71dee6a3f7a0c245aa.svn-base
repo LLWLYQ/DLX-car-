@@ -1,0 +1,26 @@
+<template>
+  <div class="guests-box ">
+    <div class="now MgT30">
+      <div class="base-tit ">
+        <h1>会议嘉宾</h1>
+      </div>
+      <guests :data="[]" />
+    </div>
+    <div class="old MgT70">
+      <div class="base-tit">
+        <h1>往届嘉宾</h1>
+      </div>
+      <guests :data="[]" />
+    </div>
+  </div>
+</template>
+
+<script>
+import Guests from '@/common/guest/guest'
+
+export default {
+  components: {
+    Guests
+  }
+}
+</script>

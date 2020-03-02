@@ -1,0 +1,43 @@
+<template>
+  <div class="guest-add-box">
+    <div class="base-tit">
+      <h1>个人报名</h1>
+    </div>
+    <div class="guest-add MgT30">
+      <guest-add @submit="submit" />
+    </div>
+  </div>
+</template>
+
+<script>
+import axios from 'axios'
+import HttpRequest, { baseURL, Headers } from '@/util/utils'
+import GuestAdd from '@/common/guest-add/guest-add'
+
+export default {
+  methods: {
+    submit(form) {
+      const formData = new FormData()
+      formData.append('username', form.username)
+      formData.append('phone', form.phone)
+      formData.append('picId', form.picId)
+      axios.post(`${baseURL}?act=viewer`, formData, Headers).then((res) => {
+        if (res.data.code === 1) {
+          alert(res.data.msg)
+        }
+        if (res.data.code === 2) {
+          alert(res.data.msg)
+        }
+      })
+    }
+  },
+  components: {
+    GuestAdd
+  }
+}
+</script>
+
+<style lang="stylus">
+  .guest-add-box
+    margin-top 30px
+</style>

@@ -1,0 +1,42 @@
+<template>
+  <div class="guests-box ">
+    <div class="now MgT30">
+      <div class="base-tit ">
+        <h1>会议嘉宾</h1>
+      </div>
+      <guests :data="result.now" />
+    </div>
+    <div class="old MgT70">
+      <div class="base-tit">
+        <h1>往届嘉宾</h1>
+      </div>
+      <guests :data="result.old" />
+    </div>
+  </div>
+</template>
+
+<script>
+import Guests from '@/common/guest/guest'
+import HttpRequest, { baseURL, Headers } from '@/util/utils'
+
+export default {
+  data () {
+    return {
+      result: ''
+    }
+  },
+  mounted () {
+    this.getResult()
+  },
+  methods: {
+    getResult () {
+      HttpRequest.get(baseURL + '/index/accept/act/member').then(res => {
+        this.result = res
+      })
+    },
+  },
+  components: {
+    Guests
+  }
+}
+</script>

@@ -1,0 +1,40 @@
+<template>
+  <div class="header">
+    <img src="http://lib.albers.top/activity/emc/banner_pc.jpg" alt="">
+    <div class="nav flexBox">
+      <a href="#one">会议介绍</a>
+      <a href="#two">会议嘉宾</a>
+      <a href="#three">会议流程</a>
+      <a href="#four">参会对象</a>
+      <a href="#five">展示范围</a>
+      <a href="#six">往届精彩</a>
+      <a href="#seven">组织架构</a>
+      <a href="#eight">位置指引</a>
+      <a href="#nine">联系我们</a>
+      <a href="#ten">同期展会</a>
+      <a href="/guest_login" class="login">观众登记</a>
+      <a href="/company_login" class="login">参展/赞助登记</a>
+    </div>
+  </div>
+</template>
+
+
+<style lang="stylus" scoped>
+  .nav
+    height 84px
+    border-bottom 1px solid #bb95bb
+    a
+     flex 1
+     font-size 16px
+     font-weight bold
+    .login
+      flex 0 0 130px
+      text-align center
+      color #fff
+      height 45px
+      line-height 45px
+      background #bb954e
+      border-radius 20px
+      & + .login
+        margin-left 10px
+</style>

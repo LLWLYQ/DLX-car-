@@ -1,0 +1,131 @@
+<template>
+  <div class="login-box company-box">
+    <div class="form_Input" >
+        <label>企业名称 <i>*</i></label>
+        <input type="text" v-model="form.company_name" placeholder="请填写您的公司名" required>
+    </div>
+    <div class="form_Input">
+        <label>联系人 <i>*</i></label>
+
+        <input type="text" v-model="form.company_contract" placeholder="请填写您的姓名" required>
+    </div>
+    <div class="form_Input">
+        <label>电话 <i>*</i></label>
+        <input type="text" v-model="form.company_tel" placeholder="请填写您的联系电话" required>
+    </div>
+    <div class="form_Input">
+        <label for="files">名片</label>
+        <upload
+          :actions="baseURL+'/images'"
+          @on-success="uploadSuccess"
+        />
+        <span>上传名片</span>
+    </div>
+    <p style="color: red;margin:0 0 10px 85px; ">提示:请上传已拍照好的图片</p>
+    <div class="form_Input">
+        <label for="company_msg">{{companyTextarea}}：</label>
+        <textarea v-model="form.company_need"></textarea>
+    </div>
+    <button class="btn" @click="submit">提交</button>
+  </div>
+</template>
+
+<script>
+import { baseURL } from '@/util/utils'
+import upload from '@/common/upload/upload'
+
+export default {
+  data() {
+    return {
+      baseURL,
+      form: {
+        company_name: '',
+        company_contract: '',
+        company_tel: '',
+        company_need: '',
+        picId: ''
+      }
+    }
+  },
+  props: {
+    company: {
+      type: Boolean,
+      default: false
+    },
+    companyTextarea: {
+      type: String,
+      default: '企业需求'
+    }
+  },
+  methods: {
+    uploadSuccess(data) {
+      this.form.picId = data.id
+    },
+    submit() {
+      const validate = this.form
+      if (validate.company_name === '') {
+        alert('企业名称不能为空')
+      } else if (validate.company_contract === '') {
+        alert('联系人不能为空')
+      } else if (validate.company_tel === '') {
+        alert('联系人手机号不能为空')
+      } else {
+        this.$emit('submit', this.form)
+      }
+    }
+  },
+  components: {
+    upload
+  }
+}
+</script>
+
+
+<style lang="stylus">
+// 登录窗口
+  .login-box
+      min-width 340px
+      padding 0 15px 15px
+      box-sizing border-box
+    .form_Input
+      margin-top 15px
+      span
+        color #a3a3a3
+        margin-left 10px
+        vertical-align bottom
+      i
+        font-style normal
+        color red
+      label
+        display block
+        font-size 14px
+        vertical-align top
+      input[type="text"]
+        width 100%
+        padding 8px
+        border 1px #b2b2b2 solid
+        border-radius 5px
+        box-sizing border-box
+        margin-top 5px
+  /* 企业*/
+  .company-box
+    textarea
+      width 100%
+      height 65px
+      resize none
+      outline none
+      padding 8px
+      box-sizing border-box
+      margin-top 5px
+      border 1px #b2b2b2 solid
+      border-radius 5px
+  .login-box .btn
+      display block
+      color #fff
+      width 60px
+      height 35px
+      margin 20px auto 0
+      border none
+      background #bb954e
+      border-radius 5px
+</style>

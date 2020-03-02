@@ -1,0 +1,46 @@
+<template>
+  <div class="company-login">
+    <div class="base-tit">
+      <h1>企业报名</h1>
+    </div>
+    <div class="company-add MgT30">
+      <companyAdd @submit="submit" />
+    </div>
+  </div>
+</template>
+
+<script>
+import axios from 'axios'
+import HttpRequest, { baseURL, Headers } from '@/util/utils'
+import companyAdd from '@/common/company-add/company-add'
+
+export default {
+  methods: {
+    submit(form) {
+      const formData = new FormData()
+      formData.append('company_name', form.company_name)
+      formData.append('company_contract', form.company_contract)
+      formData.append('company_tel', form.company_tel)
+      formData.append('company_need', form.company_need)
+      formData.append('picId', form.picId)
+      axios.post(`${baseURL}/auto_2019/company`, formData, Headers).then((res) => {
+        if (res.data.code === 1) {
+          alert(res.data.msg)
+        }
+        if (res.data.code === 2) {
+          alert(res.data.msg)
+        }
+      })
+    }
+  },
+  components: {
+    companyAdd,
+  }
+}
+</script>
+
+
+<style lang="stylus">
+  .company-login
+    margin-top 30px
+</style>

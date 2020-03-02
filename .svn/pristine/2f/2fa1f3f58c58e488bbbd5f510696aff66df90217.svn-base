@@ -1,0 +1,71 @@
+<template>
+  <footer>
+    <div class="footer">
+      <div class="web-map baseW-1100">
+        <a href="#one">会议介绍</a>
+        <a href="#two">会议嘉宾</a>
+        <a href="#three">会议流程</a>
+        <a href="#four">参会对象</a>
+        <a href="#five">展示范围</a>
+        <a href="#six">往届精彩</a>
+        <a href="#seven">组织架构</a>
+        <a href="#eight">位置指引</a>
+        <a href="#nine">联系我们</a>
+        <a href="#ten">同期展会</a>
+      </div>
+      <p>Copyright © 2000-2018 <a href="http://www.861718.com" target="_blank">861718.com</a>
+          All rights reserved 版权所有 © 广州德禄讯信息科技有限公司</p>
+    </div>
+    <a class="goBack" @click="goTop"></a>
+  </footer>
+</template>
+
+
+<script>
+
+export default {
+  methods: {
+    goTop() {
+      document.documentElement.scrollTop = 0
+    }
+  }
+}
+</script>
+
+
+<style lang="stylus">
+/* 底部 */
+  .footer
+    font-size 16px
+    font-weight normal
+    color #a3a3a3
+    text-align center
+    margin-bottom 36px
+    padding-top 30px
+    margin-top 70px
+    border-top 1px #ccc dashed
+    .web-map
+      display flex
+      justify-content center
+      align-items center
+      margin 0 auto 15px
+      text-align center
+      a
+        display block
+        color #333
+        margin-right 20px
+        & + a
+          padding-left 20px
+          border-left 1px solid rgba(0,0,0,.3)
+    p > a
+      color: inherit
+  .goBack
+    position: fixed;
+    right: 85px;
+    bottom: 95px;
+    width: 55px;
+    height: 55px;
+    background: url("http://lib.albers.top/activity/car/goback.png") no-repeat;
+    background-size: 55px;
+
+</style>

@@ -1,0 +1,525 @@
+<template>
+  <div class="home-box">
+    <!-- 会议介绍 -->
+    <div class="info" id="one">
+      <div class="base-tit MgT30">
+        <h1>会议介绍</h1>
+      </div>
+      <p class="MgT30">
+       近年来，我国工业化进程的日益加快，电磁兼容技术应用日趋广泛，尤其是新能源汽车用电控部件的电磁兼容测试和涉及车辆性能的设计要求，备受国家重视与行业关注，电磁兼容技术发展迎来令人欣喜的新契机。
+       为着力推动EMC电磁兼容技术新发展，有效把握电磁兼容技术进步新趋势，由广东省汽车工程学会、广东省仪器仪表学会联合主办的“IMCA第十六届国际论坛2019 EMC国际电磁兼容及测试技术峰会”将于2019年4月12 日在广东潭洲国际会展中心隆重举行。
+       本次“2019EMC国际电磁兼容及测试技术峰会”主题是“共蓄电磁兼容及测试技术新势能”，旨在通过和广大新能源汽车电子设计工程师、检测认证工程师深入交流，力促企业深化对目前新能源汽车整车及部件电磁兼容标准的理解，共同探讨新能源车的电磁兼容测试与设计技术及案例分析等，精准提供测试及设计优化解决方案。
+      </p>
+    </div>
+    <!-- 大会亮点 -->
+    <div class="light MgT30" >
+      <p>（议题新颖：1、汽车电磁兼容技术现状与发展趋势； 2、汽车整车电磁兼容开发及测试技术； 3、新能源汽车电子及充电装置EMC检测技术； 4、电动汽车电磁兼容的新挑战——人体电磁防护； 5、电动汽车BMS（电池管理系统）EMS测试技术； 6、PCB的EMC设计技术； 7、新能源汽车高压电驱动系统电磁兼容关键技术； 8、复杂电磁环境车辆适应性研究； 9、电动汽车EMC分析与优化； 10、汽车电子EMC设计仿真测试一体化解决方案； 11、新能源汽车测试多功能暗室设计方案。）</p>
+    </div>
+    <!-- 嘉宾 -->
+    <div class="guests" id="two">
+      <div class="base-tit MgT30">
+        <h1>会议嘉宾</h1>
+        <router-link to="/guest">更多 >> </router-link>
+      </div>
+      <guests :data="[]" />
+    </div>
+    <!-- 会议流程 -->
+    <div class="flow" id="three">
+      <div class="base-tit MgT30">
+        <h1>会议流程</h1>
+      </div>
+      <h1 class="block">主题方向</h1>
+      <div class="flexBox">
+        <p class="flowItem">汽车电磁兼容技术现状与发展趋势</p>
+        <p class="flowItem">汽车整车电磁兼容开发及测试技术</p>
+        <p class="flowItem">新能源汽车电子及充电装置EMC检测技术</p>
+        <p class="flowItem">电动汽车电磁兼容的新挑战——人体电磁防护</p>
+        <p class="flowItem">电动汽车BMS（电池管理系统）EMS测试技术</p>
+        <p class="flowItem">PCB的EMC设计技术</p>
+        <p class="flowItem">新能源汽车高压电驱动系统电磁兼容关键技术</p>
+        <p class="flowItem">复杂电磁环境车辆适应性研究</p>
+        <p class="flowItem">电动汽车EMC分析与优化</p>
+        <p class="flowItem">汽车电子EMC设计仿真测试一体化解决方案</p>
+        <p class="flowItem">新能源汽车测试多功能暗室设计方案</p>
+      </div>
+      <table cellpadding="0" cellspacing="0" border="1" class="MgT50 flowTable">
+        <thead>
+          <tr>
+            <td width="220px">时间</td>
+            <td width="440px">主题演讲及流程</td>
+            <td width="440px">主讲嘉宾</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="3">上午</td>
+          </tr>
+          <tr>
+            <td>9:00-9:30</td>
+            <td colspan="2">来宾报到</td>
+          </tr>
+          <tr>
+            <td>9:30-9:40</td>
+            <td colspan="2">会议开幕式及嘉宾介绍</td>
+          </tr>
+          <tr>
+            <td>9:40-10:00</td>
+            <td colspan="2">主办方及协办方致辞</td>
+          </tr>
+          <tr>
+            <td>10:00-10:30</td>
+            <td>汽车电磁兼容技术现状与发展趋势</td>
+            <td>沙斐：教授，博士生导师，原北京交通大学抗电磁干扰研究中心 主任</td>
+          </tr>
+          <tr>
+            <td>10:30-11:00</td>
+            <td>汽车整车电磁兼容开发及测试技术</td>
+            <td>徐立：中国汽车技术研究中心副总工程师（拟请）</td>
+          </tr>
+          <tr>
+            <td>11:00-11:30</td>
+            <td>新能源汽车电子及充电装置EMC检测技术</td>
+            <td>王曼莉：广汽研究院新能源中心EMC试验主管工程师</td>
+          </tr>
+          <tr>
+            <td>11:30—12:00</td>
+            <td colspan="2">汽车电子EMC设计仿真测试一体化解决方案（厂商代表）</td>
+          </tr>
+          <tr>
+            <td>12:00—13:30</td>
+            <td colspan="2">午餐、休息</td>
+          </tr>
+          <tr>
+            <td colspan="3">下午</td>
+          </tr>
+          <tr>
+            <td>13:30-14:00</td>
+            <td colspan="2">来宾报到</td>
+          </tr>
+          <tr>
+            <td>14:00-14:10</td>
+            <td colspan="2">嘉宾介绍</td>
+          </tr>
+          <tr>
+            <td>14:10-14:30</td>
+            <td>电动汽车电磁兼容的新挑战——人体电磁防护</td>
+            <td>丁一夫：中国汽车技术研究中心试验研究所电磁兼容试验室主管工程师</td>
+          </tr>
+          <tr>
+            <td>14:30-15:00</td>
+            <td>电动汽车BMS（电池管理系统）EMS测试技术</td>
+            <td>史信荣: 工学博士，广东省计量科学研究院高级工程师，《强激光与粒子束》特约审稿专家</td>
+          </tr>
+          <tr>
+            <td>15:00—15:30</td>
+            <td>PCB的EMC设计技术</td>
+            <td>广州无线电集团专家（拟请）</td>
+          </tr>
+          <tr>
+            <td>15:30—15:45</td>
+            <td colspan="2">休息时间：参观产品展示，自由交流</td>
+          </tr>
+          <tr>
+            <td>15:45—16:15</td>
+            <td>新能源汽车高压电驱动系统电磁兼容关键技术</td>
+            <td>赵晓凡：中国北方车辆研究所电磁兼容试验室主任（拟请）</td>
+          </tr>
+          <tr>
+            <td>16:15—16:45</td>
+            <td>复杂电磁环境车辆适应性研究</td>
+            <td>张旭：中国汽车技术研究中心汽车试验研究所电磁兼容室博士</td>
+          </tr>
+          <tr>
+            <td>16:45—17:15</td>
+            <td>电动汽车EMC分析与优化</td>
+            <td>李旭：长安汽车工程研究总院工学博士、高级工程师</td>
+          </tr>
+          <tr>
+            <td>17:15—17:45</td>
+            <td>新能源汽车测试多功能暗室设计方案</td>
+            <td>（厂商代表）</td>
+          </tr>
+          <tr>
+            <td>15:30—15:45</td>
+            <td colspan="2">抽奖活动</td>
+          </tr>
+          <tr>
+            <td>18:00—20:00</td>
+            <td colspan="2">答谢晚宴</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- 参会对象 -->
+    <div class="object" id="four">
+      <div class="base-tit">
+        <h1>参会对象</h1>
+      </div>
+      <div class="object-box">
+        <div class="object-item">
+          <span>1</span>
+          <p>汽车、通信、航空航天、军工、仪器仪表、交通等企业与设备供应商；</p>
+        </div>
+        <div class="object-item">
+          <span>2</span>
+          <p>电磁兼容仪器、设备、材料、元件等厂商</p>
+        </div>
+        <div class="object-item">
+          <span>3</span>
+          <p>安规、认证等服务机构；</p>
+        </div>
+        <div class="object-item">
+          <span>4</span>
+          <p>创新前沿和领先科技公司的技术研发工程师和市场高管；</p>
+        </div>
+        <div class="object-item">
+          <span>5</span>
+          <p>实验室装备研发、设计、制造企业的工程技术人员；</p>
+        </div>
+        <div class="object-item">
+          <span>6</span>
+          <p>工程公司、设计单位、学会/协会的领导和负责人；</p>
+        </div>
+        <div class="object-item">
+          <span>7</span>
+          <p>国家检测认证中心、科研机构、高校实验室等；</p>
+        </div>
+        <div class="object-item">
+          <span>8</span>
+          <p>《仪器仪表商情》VIP用户和读者，广大媒体代表；</p>
+        </div>
+      </div>
+    </div>
+    <!-- 展示范围 -->
+    <div class="scope MgT70" id="five">
+      <div class="base-tit">
+        <h1>展示范围</h1>
+      </div>
+      <h1 class="tit MgT30">一切用于通信、汽车、电子、电器、仪器仪表、电力等领域的电磁兼容设备、测试仪器、材料及元件等</h1>
+      <div class="Scope-swiper" @mouseout="changeSocpeMore">
+        <swiper :options="ScopeOption" ref="mySwiper" class="Swiper">
+            <!-- slides -->
+            <swiper-slide
+              class=""
+              v-for="(item, index) in 5"
+              :key="index"
+            >
+            <div class="Scope-item" @mouseover="changeSocpeMore(index)">
+              <img class="banner" src="http://lib.albers.top/activity/emc/swiper.png" alt="">
+              <div class="Scope-default">
+                <img src="http://lib.albers.top/activity/emc/swiper-icon.png" alt="">
+                <p>电磁兼容测试仪器</p>
+              </div>
+              <transition name="slideTop">
+                <div class="Scope-more" v-if="currentSocpeIndex === index">
+                  <h1>电磁兼容测试仪器</h1>
+                  <p>信号模拟器、干扰模拟器、干扰抑制器，电磁干扰测量接收机、干扰接收机，频谱分析仪、信号发生器、功率放大器、隔离变压器、脉冲变压器、尖峰发生器、谐波测试仪、电压跌落发生器、雷击浪涌发生器、静电放电发生器、静电放电模拟器、静电枪、静电干扰及静电干扰抑制器、电磁敏感度干扰模拟器、瞬态干扰及瞬态干扰抑制器、连续波模拟器、电源变化模拟器、浪涌模拟器、闪电浪涌、浪涌干扰及浪涌干扰抑制器、EMI测试接收机、工频磁场发生器、电磁脉冲模拟试验装置、环境电磁干扰检测设备和干扰分析仪、近场测试仪、光纤场强监测仪、场强计、漏能测试仪、人工电源网络、射频分析仪 等</p>
+                </div>
+              </transition>
+            </div>
+            </swiper-slide>
+          </swiper>
+          <div class="swiper-button-prev scope-prev swiper-button-white" slot="button-prev"></div>
+          <div class="swiper-button-next scope-next swiper-button-white" slot="button-next"></div>
+      </div>
+    </div>
+    <!-- 往届精彩 -->
+    <div class="previous MgT50" id="six">
+      <div class="base-tit">
+        <h1>往届精彩</h1>
+      </div>
+      <div class="Previous-swiper" >
+        <swiper :options="PreviousOption" ref="mySwiper" class="Swiper">
+            <!-- slides -->
+            <swiper-slide
+              class=""
+              v-for="(item, index) in 5"
+              :key="index"
+            >
+              <img src="" alt="">
+            </swiper-slide>
+        </swiper>
+        <div class="swiper-button-prev previous-prev " slot="button-prev"></div>
+        <div class="swiper-button-next previous-next " slot="button-next"></div>
+      </div>
+    </div>
+    <!-- 组织架构 -->
+    <div class="chart MgT70" id="seven">
+      <div class="base-tit">
+        <h1>组织架构</h1>
+      </div>
+      <div class="chart-box MgT30">
+        <div class="chart-item">
+          <span>主办单位：</span>
+          <p>广东省仪器仪表学会、深圳市仪器仪表学会</p>
+        </div>
+        <div class="chart-item">
+          <span>承办单位：</span>
+          <p>中国仪器仪表学会泛珠三角区域联盟秘书处、深圳市仪器仪表学会、中国仪器仪表学会深圳联络处、广州德禄讯信息科技有限公司、《仪器仪表商情》 </p>
+        </div>
+        <div class="chart-item">
+          <span>协办单位：</span>
+          <p>中国仪器仪表学会、广东省计量科学研究院、广东省汽车工程学会、广州汽车工业行业协会、广东省计量测试学会、广州汽车工业行业协会、华南理工大学机械及汽车工程学院、华南理工大学自动化科学与工程学院、星球国际资讯集团</p>
+        </div>
+        <div class="chart-item">
+          <span>协办媒体：</span>
+          <p>中国仪器仪表商情网、激光制造网</p>
+        </div>
+        <div class="chart-item">
+          <span>支持媒体：</span>
+          <p>中华汽配网、中国车轮网、新航线汽车生活网、suv中国网、环球汽车网、中国汽配工业网、盖世汽车网、商用车新网、汽车江湖</p>
+        </div>
+      </div>
+    </div>
+    <!-- 位置指引 -->
+    <div class="map" id="eight">
+      <div class="base-tit">
+        <h1>位置指引</h1>
+      </div>
+      <div class="map-img MgT30">
+        <img src="http://lib.albers.top/activity/emc/map.png" alt="" width="100%">
+      </div>
+    </div>
+    <!-- 联系我们 -->
+    <div class="contact MgT70" id="nine">
+      <div class="base-tit">
+        <h1>联系我们</h1>
+      </div>
+      <div class="contact-box flexBox MgT30">
+        <div class="contact-item">
+          <h1>广东省仪器仪表学会<br>深圳市仪器仪表学会（广州联络处）</h1>
+          <p>联系人：马先生；林小姐</p>
+          <p>电话：020-84133863；020-3439 7448</p>
+          <p>手机：13824486858；18825137388</p>
+          <p>邮箱：sva5225@163.com；fionalgd@163.com</p>
+        </div>
+        <div class="contact-item">
+          <h1>深圳市仪器仪表学会（秘书处）</h1>
+          <p>联系人：欧先生；黄先生</p>
+          <p>电话：0775-2320 7500</p>
+          <p>手机：13662444177；13249764220</p>
+          <p>邮箱：ourixu@861718.com；214306857@qq.com</p>
+        </div>
+      </div>
+    </div>
+    <!-- 同期展会 -->
+    <div class="Synchro MgT70" id="ten">
+      <div class="base-tit">
+        <h1>同期展会</h1>
+      </div>
+      <a href="">上届峰会 2018 EMC国际电磁兼容及测试技术峰会 </a>
+      <img src="" alt="">
+    </div>
+  </div>
+</template>
+
+<script>
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+
+import Guests from '@/common/guest/guest'
+export default {
+  data : () => ({
+    result: '',
+    currentSocpeIndex: -1,
+    ScopeOption: {
+        slidesPerView: 4,
+        // spaceBetween: 20,
+        navigation: {
+          nextEl: '.scope-next',
+          prevEl: '.scope-prev',
+        }
+      },
+    PreviousOption: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: '.previous-next',
+        prevEl: '.previous-prev',
+      }
+    }
+  }),
+  methods: {
+    changeSocpeMore (index) {
+      this.currentSocpeIndex = index
+    },
+    changeSocpeMoreOut () {
+      this.currentSocpeIndex = -1
+    }
+  },
+  components: {
+    Guests,
+    swiper,
+    swiperSlide
+  }
+}
+</script>
+
+
+<style lang="stylus" scoped>
+  @import '~swiper/dist/css/swiper.css'
+  .info
+    p
+      font-size 16px
+      text-indent 37px
+      line-height 25px
+  .light
+    width 100%
+    height 630px
+    position absolute
+    left 0
+    background url('http://lib.albers.top/activity/emc/emc_bg.png') left top no-repeat
+    p
+      width 1100px
+      font-size 16px
+      color #333
+      padding 460px 23px 0
+      line-height 30px
+      margin auto
+      box-sizing border-box
+  .guests
+    margin-top 690px
+  .flow
+    h1.block
+      font-size 16px
+      width 110px
+      padding 10px 17px
+      border 1px solid #bb954e
+      box-sizing border-box
+      margin 30px 0 10px
+    .flexBox
+      flex-flow wrap
+      .flowItem
+        font-size 16px
+        padding 10px 17px
+        border 1px solid #bb954e
+        margin-right 16px
+        box-sizing border-box
+        margin-top 12px
+    .flowTable
+      border 1px solid #978c77
+      background linear-gradient(#e0ceae 30%, #fff 70%)
+      tr
+        text-align center
+        height 50px
+  .object
+    margin-top 50px
+    .object-box
+      margin-top 30px
+      background url('http://lib.albers.top/activity/emc/emc_bg_2.png') right center no-repeat
+      .object-item
+        display flex
+        justify-content flex-start
+        margin-bottom 18px
+        span
+          display block
+          font-size 18px
+          color #fff
+          text-align center
+          width 46px
+          height 46px
+          line-height 46px
+          background #bb954e
+          border-radius 100%
+        p
+          flex 1
+          margin-left 20px
+          padding 12px 0 30px
+          border-bottom 1px solid #b2b2b2
+  .scope
+    h1.tit
+      width 100%
+      height 100px
+      font-size 18px
+      font-weight normal
+      background linear-gradient(#c09d5b 30%, #fff 70%)
+      border-radius 10px
+      padding 10px 40px
+      box-sizing border-box
+    .Scope-swiper
+      position relative
+      .Scope-item
+        position relative
+        height 415px
+        img.banner
+          position absolute
+          left 0
+          top 0
+          z-index -1
+        .Scope-default
+          z-index 10
+          img
+            margin 0 auto
+            padding-top 130px
+          p
+            font-size 16px
+            color #fff
+            text-align center
+            &::before
+              content ""
+              display block
+              width 20px
+              height 2px
+              background #fff
+              margin 10px auto 20px
+        .Scope-more
+          position absolute
+          top 0
+          width 100%
+          height 100%
+          background rgba(156, 110, 26, .8)
+          h1
+            font-size 16px
+            color #fff
+            text-align center
+            padding-top 25px
+          p
+            font-size 14px
+            color #fff
+            padding 10px 20px
+  .Previous-swiper
+    position relative
+    .swiper-container
+      margin 30px 60px 0
+      .swiper-slide
+        height 165px
+        img
+          width 100%
+          height 100%
+          background #ddcaa6
+  .chart
+    .chart-item
+      font-size 18px
+      display flex
+      justify-content flex-start
+      align-items flex-start
+      margin-bottom 40px
+      span
+        display block
+        color #bb954e
+      p
+        flex 1
+        margin-left 20px
+        line-height 30px
+  .contact
+    .contact-item
+      flex 0 0 50%
+      h1
+        font-size 18px
+        height 55px
+        margin-bottom 25px
+        overflow hidden
+      p
+        font-size 16px
+        margin-bottom 16px
+  .Synchro
+    a
+      display block
+      font-size 18px
+      font-weight bold
+      color #bb954e
+      margin 30px 0
+    img
+      width 100%
+      height 200px
+      background #b2b2b2
+</style>
