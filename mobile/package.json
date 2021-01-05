@@ -12,7 +12,7 @@
   "license": "ISC",
   "proxy": {},
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "jsonp": "^0.2.1",
     "koa": "^2.5.2",
     "koa-body": "^4.0.4",
